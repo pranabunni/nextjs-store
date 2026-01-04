@@ -1,4 +1,4 @@
-import {Prisma} from "@prisma/client/extension";
+import {CartItemGetPayload} from "@/lib/generated/prisma/models/CartItem";
 
 export type actionFunction = (
     prevState: any,
@@ -23,6 +23,6 @@ export type CartState = {
     orderTotal: number;
 };
 
-export type CartItemWithProduct = Prisma.CartItemGetPayload<{
+export type CartItemWithProduct = CartItemGetPayload<{
     include: { product: true };
 }>;
